@@ -12,7 +12,6 @@ class AppColors {
 }
 
 ThemeData primaryTheme = ThemeData(
-
   // seed color theme
   colorScheme: ColorScheme.fromSeed(
     seedColor: AppColors.primaryColor,
@@ -37,26 +36,25 @@ ThemeData primaryTheme = ThemeData(
       letterSpacing: 1,
     ),
     headlineMedium: TextStyle(
-      color: AppColors.titleColor, 
+      color: AppColors.titleColor,
       fontSize: 16,
-      fontWeight: FontWeight.bold, 
+      fontWeight: FontWeight.bold,
       letterSpacing: 1,
     ),
     titleMedium: TextStyle(
-      color: AppColors.titleColor, 
-      fontSize: 18, 
+      color: AppColors.titleColor,
+      fontSize: 18,
       fontWeight: FontWeight.bold,
       letterSpacing: 2,
     ),
   ),
 
   // card theme
-  cardTheme: CardTheme(
-    color: AppColors.secondaryColor.withOpacity(0.5),
+  cardTheme: CardThemeData(
+    color: AppColors.secondaryColor.withValues(alpha: 0.5),
     surfaceTintColor: Colors.transparent,
     shape: const RoundedRectangleBorder(),
     shadowColor: Colors.transparent,
     margin: const EdgeInsets.only(bottom: 16),
   ),
-
 );
