@@ -51,8 +51,8 @@ ThemeData primaryTheme = ThemeData(
   ),
 
   // card theme
-  cardTheme: CardTheme(
-    color: AppColors.secondaryColor.withOpacity(0.5),
+  cardTheme: CardThemeData(
+    color: AppColors.secondaryColor.withValues(alpha: 0.5),
     surfaceTintColor: Colors.transparent,
     shape: const RoundedRectangleBorder(),
     shadowColor: Colors.transparent,
@@ -62,14 +62,14 @@ ThemeData primaryTheme = ThemeData(
   // input decoration theme
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: AppColors.secondaryColor.withOpacity(0.5),
-    border: InputBorder.none, 
+    fillColor: AppColors.secondaryColor.withValues(alpha: 0.5),
+    border: InputBorder.none,
     labelStyle: TextStyle(color: AppColors.textColor),
     prefixIconColor: AppColors.textColor,
   ),
 
   // dialog theme
-  dialogTheme: DialogTheme(
+  dialogTheme: DialogThemeData(
     backgroundColor: AppColors.secondaryAccent,
     surfaceTintColor: AppColors.secondaryAccent,
   ),
