@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/models/character.dart';
 import 'package:flutter_masterclass/screens/profile/skill_list.dart';
 import 'package:flutter_masterclass/screens/profile/stats_table.dart';
+import 'package:flutter_masterclass/services/character_store.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:flutter_masterclass/theme.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget {
   const Profile({
@@ -28,7 +30,7 @@ class Profile extends StatelessWidget {
             // basic info - image, vocation, description
             Container(
               padding: const EdgeInsets.all(16),
-              color: AppColors.secondaryColor.withOpacity(0.3),
+              color: AppColors.secondaryColor.withValues(alpha: 0.3),
               child: Row(
                 children: [
                   Image.asset('assets/img/vocations/${character.vocation.image}',
@@ -58,7 +60,7 @@ class Profile extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
-                color: AppColors.secondaryColor.withOpacity(0.5),
+                color: AppColors.secondaryColor.withValues(alpha: 0.5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -89,6 +91,10 @@ class Profile extends StatelessWidget {
 
             // save button
             StyledButton(onPressed: () {
+              // update in db
+              Provider.of<CharacterStore>(context, listen: false)
+                .saveCharacter(character);
+
               // show snackbar
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: const StyledHeading('Character saved.'),
