@@ -30,12 +30,15 @@ class Profile extends StatelessWidget {
             // basic info - image, vocation, description
             Container(
               padding: const EdgeInsets.all(16),
-              color: AppColors.secondaryColor.withOpacity(0.3),
+              color: AppColors.secondaryColor.withValues(alpha: 0.3),
               child: Row(
                 children: [
-                  Image.asset('assets/img/vocations/${character.vocation.image}',
-                    width: 140,
-                    height: 140,
+                  Hero(
+                    tag: character.id.toString(),
+                    child: Image.asset('assets/img/vocations/${character.vocation.image}',
+                      width: 140,
+                      height: 140,
+                    ),
                   ),
                   const SizedBox(width: 20),
                   Expanded(
@@ -60,7 +63,7 @@ class Profile extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
-                color: AppColors.secondaryColor.withOpacity(0.5),
+                color: AppColors.secondaryColor.withValues(alpha: 0.5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
