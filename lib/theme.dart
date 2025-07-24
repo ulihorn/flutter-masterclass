@@ -72,5 +72,4 @@ ThemeData primaryTheme = ThemeData(
     backgroundColor: AppColors.secondaryAccent,
     surfaceTintColor: AppColors.secondaryAccent,
   ),
-
 );
