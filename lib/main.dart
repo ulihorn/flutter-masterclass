@@ -10,10 +10,20 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (Firebase.apps.isEmpty) {
+    // Initialize Firebase only if it hasn't been initialized yet
+    // await Firebase.initializeApp(
+    //   options: DefaultFirebaseOptions.currentPlatform,
+    // );
+    print('Initializing Firebase...');
+  } else {
+    // If Firebase is already initialized, you can skip this step
+    // print('Firebase already initialized');
+  }
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   runApp(ChangeNotifierProvider(
     create: (context) => CharacterStore(),

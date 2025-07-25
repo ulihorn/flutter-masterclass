@@ -3,10 +3,12 @@ import 'package:flutter_masterclass/models/stats.dart';
 import 'package:flutter_masterclass/models/vocation.dart';
 
 class Character with Stats {
-
-  // constructor 
-  Character({ 
-    required this.name, required this.slogan, required this.vocation, required this.id,
+  // constructor
+  Character({
+    required this.name,
+    required this.slogan,
+    required this.vocation,
+    required this.id,
   });
 
   // fields
@@ -18,7 +20,7 @@ class Character with Stats {
   bool _isFav = false;
 
   // getters
-  get isFav => _isFav;
+  bool get isFav => _isFav;
 
   // methods
   void toggleIsFav() {
@@ -34,8 +36,21 @@ class Character with Stats {
 // dummy character data
 
 List<Character> characters = [
-  Character(id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'Kapumf!'),
-  Character(id: '2', name: 'Jonny', vocation: Vocation.junkie, slogan: 'Light me up...'),
-  Character(id: '3', name: 'Crimson', vocation: Vocation.raider, slogan: 'Fire in the hole!'),
-  Character(id: '4', name: 'Shaun', vocation: Vocation.ninja, slogan: 'Alright then gang.'),
+  Character(
+      id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'Kapumf!'),
+  Character(
+      id: '2',
+      name: 'Jonny',
+      vocation: Vocation.junkie,
+      slogan: 'Light me up...'),
+  Character(
+      id: '3',
+      name: 'Crimson',
+      vocation: Vocation.raider,
+      slogan: 'Fire in the hole!'),
+  Character(
+      id: '4',
+      name: 'Shaun',
+      vocation: Vocation.ninja,
+      slogan: 'Alright then gang.'),
 ];
