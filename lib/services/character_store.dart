@@ -11,6 +11,6 @@ class CharacterStore extends ChangeNotifier {
     Character(id: '4', name: 'Shaun', vocation: Vocation.ninja, slogan: 'Alright then gang.'),
   ];
 
-  get characters => _characters;
+  List<Character> get characters => _characters;
   
 }
