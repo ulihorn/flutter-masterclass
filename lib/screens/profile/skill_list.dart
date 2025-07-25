@@ -53,7 +53,7 @@ class _SkillListState extends State<SkillList> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: availableSkills.map((skill) {
                 return Container(
-                  margin: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.all(3),
                   padding: const EdgeInsets.all(2),
                   color: skill == selectedSkill ? Colors.yellow : Colors.transparent,
                   child: GestureDetector(
