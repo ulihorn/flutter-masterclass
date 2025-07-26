@@ -41,7 +41,7 @@ class _SkillListState extends State<SkillList> {
       padding: const EdgeInsets.all(16),
       child: Container(
         padding: const EdgeInsets.all(16),
-        color: AppColors.secondaryColor.withOpacity(0.5),
+        color: AppColors.secondaryColor.withValues(alpha: 0.5),
         child: Column(
           children: [
 
